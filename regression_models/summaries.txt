@@ -1,0 +1,259 @@
+
+================================================================================
+MODEL: A1 — Structural baseline
+================================================================================
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:              CV_Rating   R-squared:                       0.097
+Model:                            OLS   Adj. R-squared:                  0.088
+Method:                 Least Squares   F-statistic:                     10.40
+Date:                Tue, 24 Mar 2026   Prob (F-statistic):           1.61e-06
+Time:                        01:13:32   Log-Likelihood:                -570.00
+No. Observations:                 295   AIC:                             1148.
+Df Residuals:                     291   BIC:                             1163.
+Df Model:                           3                                         
+Covariance Type:            nonrobust                                         
+==================================================================================
+                     coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------
+const              5.4479      0.348     15.655      0.000       4.763       6.133
+Minutes played     0.0006      0.000      3.951      0.000       0.000       0.001
+DF                -0.5140      0.217     -2.370      0.018      -0.941      -0.087
+FW                 0.9001      0.287      3.138      0.002       0.336       1.465
+==============================================================================
+Omnibus:                       45.694   Durbin-Watson:                   2.238
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               73.259
+Skew:                           0.908   Prob(JB):                     1.24e-16
+Kurtosis:                       4.632   Cond. No.                     8.02e+03
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 8.02e+03. This might indicate that there are
+strong multicollinearity or other numerical problems.
+
+================================================================================
+MODEL: A2 — + Opponent sensitivity (Gap)
+================================================================================
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:              CV_Rating   R-squared:                       0.192
+Model:                            OLS   Adj. R-squared:                  0.181
+Method:                 Least Squares   F-statistic:                     17.20
+Date:                Tue, 24 Mar 2026   Prob (F-statistic):           1.13e-12
+Time:                        01:13:32   Log-Likelihood:                -553.62
+No. Observations:                 295   AIC:                             1117.
+Df Residuals:                     290   BIC:                             1136.
+Df Model:                           4                                         
+Covariance Type:            nonrobust                                         
+=========================================================================================
+                            coef    std err          t      P>|t|      [0.025      0.975]
+-----------------------------------------------------------------------------------------
+const                     5.1322      0.334     15.358      0.000       4.475       5.790
+Minutes played            0.0007      0.000      4.260      0.000       0.000       0.001
+Gap_Easy_vs_Difficult     2.3185      0.397      5.836      0.000       1.537       3.100
+DF                       -0.6180      0.206     -2.995      0.003      -1.024      -0.212
+FW                        0.8935      0.272      3.288      0.001       0.359       1.428
+==============================================================================
+Omnibus:                       44.571   Durbin-Watson:                   2.175
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               72.879
+Skew:                           0.878   Prob(JB):                     1.49e-16
+Kurtosis:                       4.687   Cond. No.                     9.16e+03
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 9.16e+03. This might indicate that there are
+strong multicollinearity or other numerical problems.
+
+================================================================================
+MODEL: DF1 — T+I mean → CV_T+I
+================================================================================
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:              CV_T+I_90   R-squared:                       0.464
+Model:                            OLS   Adj. R-squared:                  0.454
+Method:                 Least Squares   F-statistic:                     47.23
+Date:                Tue, 24 Mar 2026   Prob (F-statistic):           1.69e-15
+Time:                        01:13:32   Log-Likelihood:                -448.58
+No. Observations:                 112   AIC:                             903.2
+Df Residuals:                     109   BIC:                             911.3
+Df Model:                           2                                         
+Covariance Type:            nonrobust                                         
+==================================================================================
+                     coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------
+const            130.7143      5.883     22.218      0.000     119.054     142.375
+T+I_90_mean      -19.0581      2.071     -9.204      0.000     -23.162     -14.954
+Minutes played    -0.0042      0.002     -2.043      0.043      -0.008      -0.000
+==============================================================================
+Omnibus:                        6.157   Durbin-Watson:                   1.933
+Prob(Omnibus):                  0.046   Jarque-Bera (JB):                5.601
+Skew:                           0.508   Prob(JB):                       0.0608
+Kurtosis:                       3.409   Cond. No.                     1.06e+04
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 1.06e+04. This might indicate that there are
+strong multicollinearity or other numerical problems.
+
+================================================================================
+MODEL: DF2 — Clearances mean → CV_Clearances
+================================================================================
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:       CV_Clearances_90   R-squared:                       0.413
+Model:                            OLS   Adj. R-squared:                  0.402
+Method:                 Least Squares   F-statistic:                     38.34
+Date:                Tue, 24 Mar 2026   Prob (F-statistic):           2.47e-13
+Time:                        01:13:32   Log-Likelihood:                -483.02
+No. Observations:                 112   AIC:                             972.0
+Df Residuals:                     109   BIC:                             980.2
+Df Model:                           2                                         
+Covariance Type:            nonrobust                                         
+======================================================================================
+                         coef    std err          t      P>|t|      [0.025      0.975]
+--------------------------------------------------------------------------------------
+const                119.4683      7.067     16.906      0.000     105.462     133.474
+Clearances_90_mean    -8.1120      1.026     -7.903      0.000     -10.146      -6.078
+Minutes played        -0.0087      0.003     -3.133      0.002      -0.014      -0.003
+==============================================================================
+Omnibus:                      113.930   Durbin-Watson:                   2.106
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             2013.791
+Skew:                           3.334   Prob(JB):                         0.00
+Kurtosis:                      22.674   Cond. No.                     9.11e+03
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 9.11e+03. This might indicate that there are
+strong multicollinearity or other numerical problems.
+
+================================================================================
+MODEL: MF1 — PassAcc mean → CV_PassAcc
+================================================================================
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:            CV_PassAcc%   R-squared:                       0.731
+Model:                            OLS   Adj. R-squared:                  0.727
+Method:                 Least Squares   F-statistic:                     181.2
+Date:                Tue, 24 Mar 2026   Prob (F-statistic):           1.06e-38
+Time:                        01:13:32   Log-Likelihood:                -319.26
+No. Observations:                 136   AIC:                             644.5
+Df Residuals:                     133   BIC:                             653.3
+Df Model:                           2                                         
+Covariance Type:            nonrobust                                         
+==================================================================================
+                     coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------
+const             70.6907      3.131     22.580      0.000      64.499      76.883
+PassAcc%_mean     -0.6961      0.037    -18.934      0.000      -0.769      -0.623
+Minutes played    -0.0012      0.000     -3.359      0.001      -0.002      -0.001
+==============================================================================
+Omnibus:                       26.956   Durbin-Watson:                   1.988
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               47.401
+Skew:                           0.914   Prob(JB):                     5.09e-11
+Kurtosis:                       5.241   Cond. No.                     2.91e+04
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 2.91e+04. This might indicate that there are
+strong multicollinearity or other numerical problems.
+
+================================================================================
+MODEL: MF2 — KeyPass mean → CV_KeyPass
+================================================================================
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:          CV_KeyPass_90   R-squared:                       0.489
+Model:                            OLS   Adj. R-squared:                  0.481
+Method:                 Least Squares   F-statistic:                     63.54
+Date:                Tue, 24 Mar 2026   Prob (F-statistic):           4.28e-20
+Time:                        01:13:32   Log-Likelihood:                -656.75
+No. Observations:                 136   AIC:                             1320.
+Df Residuals:                     133   BIC:                             1328.
+Df Model:                           2                                         
+Covariance Type:            nonrobust                                         
+===================================================================================
+                      coef    std err          t      P>|t|      [0.025      0.975]
+-----------------------------------------------------------------------------------
+const             179.9388     10.078     17.855      0.000     160.006     199.872
+KeyPass_90_mean   -42.2147      3.747    -11.267      0.000     -49.626     -34.804
+Minutes played     -0.0032      0.004     -0.742      0.459      -0.012       0.005
+==============================================================================
+Omnibus:                       35.066   Durbin-Watson:                   1.760
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               55.729
+Skew:                           1.269   Prob(JB):                     7.92e-13
+Kurtosis:                       4.841   Cond. No.                     7.95e+03
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 7.95e+03. This might indicate that there are
+strong multicollinearity or other numerical problems.
+
+================================================================================
+MODEL: FW1 — SoT mean → CV_SoT  [LIMITED n=47]
+================================================================================
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:              CV_SoT_90   R-squared:                       0.616
+Model:                            OLS   Adj. R-squared:                  0.599
+Method:                 Least Squares   F-statistic:                     35.34
+Date:                Tue, 24 Mar 2026   Prob (F-statistic):           7.04e-10
+Time:                        01:13:32   Log-Likelihood:                -218.23
+No. Observations:                  47   AIC:                             442.5
+Df Residuals:                      44   BIC:                             448.0
+Df Model:                           2                                         
+Covariance Type:            nonrobust                                         
+==================================================================================
+                     coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------
+const            212.5383     13.386     15.877      0.000     185.560     239.516
+SoT_90_mean      -62.9953      8.974     -7.020      0.000     -81.081     -44.910
+Minutes played    -0.0142      0.008     -1.863      0.069      -0.029       0.001
+==============================================================================
+Omnibus:                        4.854   Durbin-Watson:                   2.282
+Prob(Omnibus):                  0.088   Jarque-Bera (JB):                3.686
+Skew:                           0.548   Prob(JB):                        0.158
+Kurtosis:                       3.826   Cond. No.                     6.56e+03
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 6.56e+03. This might indicate that there are
+strong multicollinearity or other numerical problems.
+
+================================================================================
+MODEL: FW2 — xG mean → CV_xG  [LIMITED n=47]
+================================================================================
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:               CV_xG_90   R-squared:                       0.307
+Model:                            OLS   Adj. R-squared:                  0.276
+Method:                 Least Squares   F-statistic:                     9.764
+Date:                Tue, 24 Mar 2026   Prob (F-statistic):           0.000310
+Time:                        01:13:32   Log-Likelihood:                -211.99
+No. Observations:                  47   AIC:                             430.0
+Df Residuals:                      44   BIC:                             435.5
+Df Model:                           2                                         
+Covariance Type:            nonrobust                                         
+==================================================================================
+                     coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------
+const            137.4175     11.307     12.153      0.000     114.629     160.206
+xG_90_mean       -83.8012     19.930     -4.205      0.000    -123.967     -43.635
+Minutes played     0.0058      0.007      0.816      0.419      -0.009       0.020
+==============================================================================
+Omnibus:                        0.437   Durbin-Watson:                   1.748
+Prob(Omnibus):                  0.804   Jarque-Bera (JB):                0.568
+Skew:                          -0.195   Prob(JB):                        0.753
+Kurtosis:                       2.627   Cond. No.                     1.09e+04
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 1.09e+04. This might indicate that there are
+strong multicollinearity or other numerical problems.
